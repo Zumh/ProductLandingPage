@@ -1,37 +1,105 @@
 <!DOCTYPE html>
+<!--due to the cross-site scripting security features in Chrome, must include css/style in html in one page.-->
+<style>
+
+#header-img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    display: block;
+
+}
+
+/* For desktop: */
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
+  }
+}
+
+.flex-container {
+    display: flex;
+    background-color: DodgerBlue;
+}
+
+.flex-container > div {
+    background-color: #f1f1f1;
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+  }
+</style>
 <html>
 <!--headerelement-->
-<head id="header">
-    <link rel="stylesheet" href="css/productlanding.css">
-    <!--company logo-->
-    <div class="logo">
-    <img src="images/kingsman.jpg" id="header-img"/>
-    </div>
-
-    <!--nav bar-->
-    <nav id="nav-bar">
-        <!--clickable link-->
-        <ul>
-            <li><a class="nav-link" href="#How">How to join</a></li>
-            <li><a class="nav-link" href="#Contact">Contact us</a></li>
-            <li><a class="nav-link" href="#About">About us</a></li>
-        </ul>
-
-    </nav>
- 
+<head>
 </head>
+
 
 
 <body>
 
-      <section id="kingsman">
-        <iframe width="560" height="315" src="kingsman.mp4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </section>
+    <header id="header">
+        <!--company logo-->
+        <div class="logo">
+          <img id="header-img" src="https://upload.wikimedia.org/wikipedia/commons/9/94/Kingsman._logo.svg" />
+          </div>
+      
+          <!--nav bar-->
+          <nav id="nav-bar">
+              <!--clickable link-->
+              <ul>
+                  <li><a class="nav-link" href="#how">How to join</a></li>
+                  <li><a class="nav-link" href="#contact">Contact us</a></li>
+                  <li><a class="nav-link" href="#about">About us</a></li>
+              </ul>
+      
+          </nav>
+      </header>
+      
+
+
 
       <form id="form" action="https://www.freecodecamp.com/email-submit"> 
-        <input type="email" id="email" placeholder="Enter email.." required/>
-        <input type="submit" id="submit" value="Submit" require/>
+        <input type="email" id="email" name="email" placeholder="Enter email.." required/>
+        <input id="submit" type="submit"  value="Upload application"/>
     </form>
 
+    <!-- Container -->
+    <div class="container">
+        <!--How to join-->
+        <section id="how">
+            <iframe id="video" width="560" height="315" src="kingsman.mp4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </section>
+
+        <!--Contact us-->
+        <section id="contact">
+
+        </section>
+
+
+        <!--About-->
+        <section id="about">
+            <div class="flex-container">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+            </div>
+        </section>
+    </div>
 </body>
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"> </script>
 </html>
