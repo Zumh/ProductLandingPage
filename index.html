@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--due to the cross-site scripting security features in Chrome, must include css/style in html in one page.-->
+<!--due to the cross-site scripting security features in Chrome, must include css/style in html in one page. Media query-->
 <style>
 
 #header-img {
@@ -7,7 +7,7 @@
     height: 250px;
     border-radius: 50%;
     display: block;
-
+    padding-top: 30px;
 }
 
 /* For desktop: */
@@ -33,15 +33,42 @@
 
 .flex-container {
     display: flex;
-    background-color: DodgerBlue;
+    justify-content: center;
+}
+.flex-container > div {
+    background-color: white;
+    width: 200px;
 }
 
-.flex-container > div {
-    background-color: #f1f1f1;
-    margin: 10px;
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+#form, .container, #header {
+    text-align: center;
+}
+
+.nav-link {
     padding: 20px;
-    font-size: 30px;
-  }
+    margin: 20px;
+}
+
+section {
+padding-bottom: 20px;
+padding-top: 30px;
+}
+
+#nav-bar{
+    position: fixed;
+  background-color: orange;
+  width: 100%;
+  height: 100px;
+  top: 0;
+}
+
+
 </style>
 <html>
 <!--headerelement-->
@@ -54,29 +81,25 @@
 
     <header id="header">
         <!--company logo-->
-        <div class="logo">
-          <img id="header-img" src="https://upload.wikimedia.org/wikipedia/commons/9/94/Kingsman._logo.svg" />
+        <div class="picture">
+          <img id="header-img" alt="logo" src="https://upload.wikimedia.org/wikipedia/commons/9/94/Kingsman._logo.svg" />
           </div>
       
-          <!--nav bar-->
+           <!--clickable link-->
           <nav id="nav-bar">
-              <!--clickable link-->
-              <ul>
-                  <li><a class="nav-link" href="#how">How to join</a></li>
-                  <li><a class="nav-link" href="#contact">Contact us</a></li>
-                  <li><a class="nav-link" href="#about">About us</a></li>
-              </ul>
+            
+           
+                 <a class="nav-link" href="#how">How to join</a>
+                 <a class="nav-link" href="#contact">Contact us</a>
+                  <a class="nav-link" href="#about">About us</a>
+            
       
           </nav>
-      </header>
+    </header>
       
 
 
-
-      <form id="form" action="https://www.freecodecamp.com/email-submit"> 
-        <input type="email" id="email" name="email" placeholder="Enter email.." required/>
-        <input id="submit" type="submit"  value="Upload application"/>
-    </form>
+   
 
     <!-- Container -->
     <div class="container">
@@ -90,16 +113,22 @@
 
         </section>
 
+    <!--submit email and form-->
+    <form id="form" action="https://www.freecodecamp.com/email-submit"> 
+        <input type="email" id="email" name="email" placeholder="Enter email.." required/>
+        <input id="submit" type="submit"  value="Upload application"/>
+    </form>
 
         <!--About-->
         <section id="about">
             <div class="flex-container">
-                <div>1</div>
-                <div>2</div>
-                <div>3</div>
+                <div><a target="_blank" href="https://kingsman.fandom.com/wiki/Kingsman_(Agency)">Kingsman Fandom</a></div>
+                <div><a target="_blank" href="https://en.wikipedia.org/wiki/Kingsman:_The_Secret_Service">More detail</a></div>
+                <div><a target="_blank" href="https://www.youtube.com/watch?v=0J9AsW3dueA">Gears</a></div>
             </div>
         </section>
     </div>
+   
 </body>
 <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"> </script>
 </html>
